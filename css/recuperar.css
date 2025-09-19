@@ -1,0 +1,186 @@
+:root {
+  --top: #b6dfe6;   
+  --bottom: #4f8c92;   
+  --accent: #2f7c84;  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px; /* deja espacio para el logo */
+  position: relative;
+}
+
+/* Logo fijo arriba */
+.Logo {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+/* Contenedor principal */
+.login-container {
+  background: linear-gradient(to top, #669ba5 50%, #b4d4dc 50%);
+  width: 100%;
+  max-width: 400px;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Contenido */
+.container {
+  width: 100%;
+  position: relative;
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 30px 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  text-align: center;
+  width: 100%;
+}
+
+.card h2 {
+  font-size: 22px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.card p.sub {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 13px;
+  color: #444;
+  margin: 12px 0 18px;
+  line-height: 1.4;
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 16px;
+  background: #fff;
+  position: relative;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #333;
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+.input-group .icon {
+  font-size: 16px;
+  color: #444;
+}
+
+/* Botón de mostrar/ocultar */
+.toggle-visibility {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #444;
+  position: absolute;
+  right: 10px;
+}
+
+/* Links */
+.otro-metodo {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 18px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Botón principal */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #25666d;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  body {
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .login-container {
+    min-height: auto;
+    border-radius: 16px;
+  }
+
+  .card {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .card p.sub {
+    font-size: 13px;
+  }
+
+  .info {
+    font-size: 12px;
+  }
+}

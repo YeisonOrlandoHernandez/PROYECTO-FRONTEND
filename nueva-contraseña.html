@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva Contraseña - InnovaTech</title>
+  <link rel="stylesheet" href="css/nueva-contraseña.css">
+  <script src="https://kit.fontawesome.com/4a2d1f5b53.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h2>Nueva Contraseña</h2>
+      <p>Crea una contraseña segura para tu cuenta.</p>
+      
+      <form id="passwordForm">
+        <div class="input-group">
+          <input type="password" id="newPassword" placeholder="Nueva contraseña" required>
+          <span class="toggle-password" onclick="togglePassword('newPassword', this)">
+            <i class="fa fa-eye"></i>
+          </span>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="confirmPassword" placeholder="Confirmar contraseña" required>
+          <span class="toggle-password" onclick="togglePassword('confirmPassword', this)">
+            <i class="fa fa-eye"></i>
+          </span>
+        </div>
+
+        <button type="submit" class="btn">Guardar Contraseña</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/nueva-contraseña.js"></script>
+</body>
+</html>

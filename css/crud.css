@@ -1,0 +1,243 @@
+/* ================== General ================== */
+html, body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;          
+}
+
+.container {
+  display: flex;         
+  height: 100vh;       
+}
+
+/* ================== Sidebar ================== */
+.sidebar {
+  background: #2c5a60;
+  color: #fff;
+  width: 250px;
+  height: 100%;           
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.sidebar .icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top:  10px;
+  left: 5px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center;
+  gap: 15px;         
+  flex-grow: 1;        
+}
+
+.avatar {
+  font-size: 60px;
+  margin-bottom:-30px;
+  padding: 30px;
+}
+
+.name {
+  font-weight: bold;
+  padding: -10px;
+}
+
+.role {
+  font-size: 14px;
+  color: #ddd;
+  padding: -20px;
+}
+
+.logout {
+  background: #004d4d;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ================== Main ================== */
+.main-content {
+  flex: 1;              
+  padding: 20px;
+  background: #f5f5f5;
+  overflow-y: auto;      
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.actions input {
+  flex: 1;
+  padding: 5px;
+}
+
+#btnAdd {
+  background: #007777;
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ================== Tabla ================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: #007777;
+  color: #fff;
+}
+
+.action-btn {
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ================== Modal ================== */
+.modal {
+  display: none;               
+  position: fixed;             
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); 
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 50px;
+  border-radius: 12px;
+  max-width: 400px;          
+  width: 90%;                
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.modal-content input, 
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.form-actions button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+/* ================== Responsive ================== */
+
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+    padding: 15px;
+  }
+  .avatar {
+    font-size: 50px;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  #btnAdd {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .profile {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    text-align: left;
+    font-weight: bold;
+  }
+}

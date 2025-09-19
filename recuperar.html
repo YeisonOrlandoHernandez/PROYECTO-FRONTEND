@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperación de la cuenta</title>
+  <link rel="stylesheet" href="css/recuperar.css">
+  <script src="libs/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <a href="login.html">
+    <img src="img/logob.png" class="Logo">
+  </a>
+
+  <div class="login-container">
+    <div class="container">
+      <div class="card">
+        <h2>Recuperación de la cuenta</h2>
+        <p class="sub">Esto ayuda a verificar que esta cuenta le pertenece</p>
+
+        <!-- Usuario -->
+        <div class="input-group">
+          <span class="icon">👤</span>
+          <input type="text" value="********788@gmail.com" disabled>
+        </div>
+
+        <p class="info">
+          Se acaba de enviar un correo electrónico con un código de verificación a ********788@gmail.com
+        </p>
+
+        <!-- Código -->
+        <div class="input-group code">
+          <span class="icon">🔒</span>
+          <input type="password" id="codigo" placeholder="Escribe el código" required>
+          <button type="button" class="toggle-visibility" onclick="toggleCodigo()">👁</button>
+        </div>
+
+        <button class="submit-btn" id="siguiente">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/recuperar.js"></script>
+</body>
+</html>

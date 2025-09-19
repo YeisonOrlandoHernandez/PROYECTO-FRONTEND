@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - InnovaTech Services</title>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <img src="img/logo.png" alt="InnovaTech Services" class="logo">
+      <h2>Iniciar sesión</h2>
+
+      <form id="loginForm">
+        <!-- Usuario -->
+        <div class="input-group">
+          <span class="icon">👤</span>
+          <input type="text" id="usuario" placeholder="Usuario" required>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="input-group">
+          <span class="icon">🔒</span>
+          <input type="password" id="password" placeholder="Contraseña" required>
+          <button type="button" class="toggle-password">👁️</button>
+        </div>
+
+        <!-- Opciones -->
+        <div class="options">
+          <label>
+            <input type="checkbox"> Recordar contraseña
+          </label>
+          <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button type="submit" class="btn">Acceder</button>
+      </form>
+    </div>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+</html>
