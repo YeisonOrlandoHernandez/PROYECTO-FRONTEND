@@ -1,24 +1,141 @@
   $(document).ready(function () {
-    const $modal = $("#modalForm");
-    const $btnAdd = $("#btnAdd");
-    const $btnCancel = $("#btnCancel");
-    const $form = $("#serviceForm");
-    const $editIndex = $("#editIndex");
-    const $searchInput = $("#searchInput");
+  const $modal = $("#modalForm");
+  const $btnAdd = $("#btnAdd");
+  const $btnCancel = $("#btnCancel");
+  const $form = $("#serviceForm");
+  const $editIndex = $("#editIndex");
+  const $searchInput = $("#searchInput");
 
-  // Datos iniciales
- let services = JSON.parse(localStorage.getItem("services")) || [
-    { name: "Servicios de infraestructura y soporte", desc: "Este servicio está diseñado para garantizar que las empresas cuenten con una base tecnológica sólida, segura y eficiente. Incluye la implementación, administración y mantenimiento de la infraestructura tecnológica (servidores, redes, equipos de cómputo y almacenamiento), así como soporte técnico especializado para resolver incidencias y optimizar el rendimiento de los sistemas.", availability: "Disponible", price: 100000 },
-    { name: "Servicios en la nube", desc: "Ofrecemos soluciones seguras y escalables para almacenar, gestionar y acceder a la información de tu empresa desde cualquier lugar y dispositivo. Nuestros servicios en la nube garantizan disponibilidad, respaldo automático, optimización de costos y la máxima protección de tus datos, facilitando la colaboración y la continuidad de tu negocio.", availability: "Disponible", price: 120000 },
-    { name: "Servicios de ciberseguridad", desc: "Protegemos la información y los sistemas de tu empresa frente a amenazas digitales. Ofrecemos soluciones de seguridad avanzada como monitoreo constante, detección de vulnerabilidades, gestión de accesos y protección contra ciberataques, garantizando la confidencialidad, integridad y disponibilidad de tus datos.", availability: "Disponible", price: 140000 },
-    { name: "Desarrollo de software", desc: "Diseñamos y creamos aplicaciones a la medida de las necesidades de tu negocio. Nuestro equipo desarrolla soluciones innovadoras, escalables y seguras que optimizan procesos, mejoran la productividad y ofrecen experiencias digitales de alto valor para tus clientes.", availability: "Disponible", price: 100000 },
-    { name: "Servicios de datos e inteligencia", desc: "Transformamos los datos de tu empresa en información estratégica para la toma de decisiones. Implementamos soluciones de análisis avanzado, inteligencia de negocios (BI) e inteligencia artificial que permiten identificar oportunidades, optimizar procesos y anticipar tendencias del mercado.", availability: "Disponible", price: 120000 },
-    { name: "Servicios de innovación digital", desc: "Impulsamos la transformación de tu negocio mediante soluciones digitales innovadoras. Aplicamos tecnologías emergentes, metodologías ágiles y estrategias disruptivas que permiten crear nuevos modelos de negocio, mejorar la experiencia del cliente y mantener tu empresa a la vanguardia del mercado.", availability: "Disponible", price: 140000 },
-    { name: "Servicios especializados", desc: "Brindamos soluciones tecnológicas adaptadas a las necesidades específicas de cada sector. Nuestro enfoque combina experiencia, conocimiento técnico y mejores prácticas para ofrecer servicios personalizados que aseguran resultados efectivos y un alto valor para tu negocio.", availability: "Disponible", price: 100000 },
-    { name: "Servicios de capacitación y formación", desc: "Fortalecemos las competencias digitales y tecnológicas de tu equipo a través de programas de capacitación prácticos y personalizados. Ofrecemos talleres, cursos y entrenamientos especializados que impulsan la adopción de nuevas herramientas y fomentan la innovación dentro de tu organización.", availability: "Disponible", price: 120000 },
-    { name: "Servicios de telecomunicaciones", desc: "Ofrecemos soluciones de conectividad confiables y de alto rendimiento que garantizan la comunicación fluida de tu empresa. Implementamos redes seguras, telefonía IP, internet dedicado y servicios integrados que aseguran disponibilidad, escalabilidad y soporte constante para tu operación.", availability: "Disponible", price: 140000 },
-    { name: "Servicios creativos y multimedia", desc: "Desarrollamos contenidos visuales y digitales innovadores que potencian la identidad de tu marca. Ofrecemos diseño gráfico, producción audiovisual, animación y soluciones multimedia que comunican tus ideas de manera efectiva y atractiva para cautivar a tu audiencia.", availability: "Disponible", price: 120000 }
+  let services = [];
+
+  // Datos iniciales (backup)
+  const defaultServices = [
+    {
+      name: "Servicios de infraestructura y soporte",
+      desc: "Garantiza una base tecnológica sólida y eficiente con soporte técnico y mantenimiento.",
+      availability: "Disponible",
+      price: 100000
+    },
+    {
+      name: "Servicios en la nube",
+      desc: "Soluciones seguras y escalables para almacenar y acceder a la información desde cualquier lugar.",
+      availability: "Disponible",
+      price: 120000
+    },
+    {
+      name: "Servicios de ciberseguridad",
+      desc: "Protección avanzada contra amenazas digitales, vulnerabilidades y ciberataques.",
+      availability: "Disponible",
+      price: 140000
+    },
+    {
+      name: "Desarrollo de software",
+      desc: "Aplicaciones a la medida que optimizan procesos y mejoran la productividad.",
+      availability: "Disponible",
+      price: 100000
+    },
+    {
+      name: "Servicios de datos e inteligencia",
+      desc: "Transformamos los datos en información estratégica con BI e inteligencia artificial.",
+      availability: "Disponible",
+      price: 120000
+    },
+    {
+      name: "Consultoría tecnológica",
+      desc: "Asesoría experta para implementar soluciones tecnológicas adecuadas a cada negocio.",
+      availability: "Disponible",
+      price: 80000
+    },
+    {
+      name: "Desarrollo web y móvil",
+      desc: "Diseño y desarrollo de plataformas web y aplicaciones móviles modernas.",
+      availability: "Disponible",
+      price: 150000
+    },
+    {
+      name: "Soporte técnico remoto",
+      desc: "Atención rápida y eficiente para resolver incidentes técnicos sin desplazamiento.",
+      availability: "Disponible",
+      price: 70000
+    },
+    {
+      name: "Gestión de redes y servidores",
+      desc: "Administración, monitoreo y optimización de infraestructura de red y servidores.",
+      availability: "Disponible",
+      price: 130000
+    },
+    {
+      name: "Respaldo y recuperación de datos",
+      desc: "Sistemas automáticos de copia de seguridad y restauración de información.",
+      availability: "Disponible",
+      price: 110000
+    },
+    {
+      name: "Capacitación tecnológica",
+      desc: "Cursos personalizados para mejorar las habilidades digitales del personal.",
+      availability: "Disponible",
+      price: 60000
+    },
+    {
+      name: "Integración de sistemas",
+      desc: "Conectamos diferentes plataformas y aplicaciones para optimizar procesos.",
+      availability: "Disponible",
+      price: 95000
+    },
+    {
+      name: "Automatización de procesos",
+      desc: "Implementación de flujos automáticos para reducir errores y mejorar eficiencia.",
+      availability: "Disponible",
+      price: 125000
+    },
+    {
+      name: "Monitoreo de sistemas 24/7",
+      desc: "Supervisión constante para garantizar el rendimiento y disponibilidad de los servicios.",
+      availability: "Disponible",
+      price: 115000
+    },
+    {
+      name: "Análisis de vulnerabilidades",
+      desc: "Identificación de riesgos de seguridad antes de que se conviertan en amenazas.",
+      availability: "Disponible",
+      price: 135000
+    },
+    {
+      name: "Consultoría en transformación digital",
+      desc: "Ayudamos a las empresas a digitalizar y modernizar sus operaciones.",
+      availability: "Disponible",
+      price: 150000
+    },
+    {
+      name: "Servicios de inteligencia artificial",
+      desc: "Desarrollo de soluciones basadas en IA para optimizar decisiones empresariales.",
+      availability: "Disponible",
+      price: 180000
+    },
+    {
+      name: "Análisis de datos empresariales",
+      desc: "Informes avanzados y visualizaciones interactivas para toma de decisiones.",
+      availability: "Disponible",
+      price: 120000
+    },
+    {
+      name: "Gestión de proyectos tecnológicos",
+      desc: "Planificación, ejecución y control de proyectos de TI.",
+      availability: "Disponible",
+      price: 110000
+    },
+    {
+      name: "Auditoría informática",
+      desc: "Evaluación integral de la infraestructura tecnológica y cumplimiento de estándares.",
+      availability: "Disponible",
+      price: 95000
+    }
   ];
+
+  // Guardar en localStorage
+  function saveToStorage() {
+    localStorage.setItem("services", JSON.stringify(services));
+  }
 
   // Inicializar DataTable
   const table = $("#serviceTable").DataTable({
@@ -47,17 +164,34 @@
     dom: "lrtip"
   });
 
-  // Guardar en localStorage
-  function saveToStorage() {
-    localStorage.setItem("services", JSON.stringify(services));
-  }
-
-  // Renderizar tabla
   function renderTable() {
     table.clear().rows.add(services).draw();
   }
 
-  // Abrir modal
+  // Cargar servicios
+  function loadServices() {
+    const localData = localStorage.getItem("services");
+
+    if (localData) {
+      services = JSON.parse(localData);
+      renderTable();
+    } else {
+      $.getJSON("./services.json")
+        .done(function (data) {
+          services = data;
+          saveToStorage();
+          renderTable();
+        })
+        .fail(function () {
+          console.warn("No se pudo cargar el archivo JSON. Usando datos locales predeterminados.");
+          services = defaultServices;
+          saveToStorage();
+          renderTable();
+        });
+    }
+  }
+
+  // Botón añadir
   $btnAdd.on("click", function () {
     $("#modalTitle").text("Añadir Servicio");
     $form[0].reset();
@@ -65,7 +199,7 @@
     $modal.show();
   });
 
-  // Cancelar modal
+  // Botón cancelar
   $btnCancel.on("click", function () {
     $modal.hide();
   });
@@ -73,32 +207,22 @@
   // Guardar servicio
   $form.on("submit", function (e) {
     e.preventDefault();
+
     const service = {
       name: $("#serviceName").val(),
       desc: $("#serviceDesc").val(),
       availability: $("#serviceAvailability").val(),
       price: $("#servicePrice").val()
     };
+
     const index = $editIndex.val();
 
     if (index === "") {
       services.push(service);
-      Swal.fire({
-        title: "Servicio añadido",
-        text: "El servicio se ha guardado correctamente.",
-        icon: "success",
-        timer: 1500,
-        showConfirmButton: false
-      });
+      Swal.fire("Servicio añadido", "El servicio se ha guardado correctamente.", "success");
     } else {
       services[index] = service;
-      Swal.fire({
-        title: "Servicio actualizado",
-        text: "Los cambios se han guardado correctamente.",
-        icon: "success",
-        timer: 1500,
-        showConfirmButton: false
-      });
+      Swal.fire("Servicio actualizado", "Los cambios se han guardado correctamente.", "success");
     }
 
     saveToStorage();
@@ -106,7 +230,7 @@
     $modal.hide();
   });
 
-  // Editar servicio
+  // Editar
   $("#serviceTable").on("click", ".edit", function () {
     const index = $(this).data("index");
     const s = services[index];
@@ -119,10 +243,9 @@
     $modal.show();
   });
 
-  // Eliminar servicio con SweetAlert2
+  // Eliminar
   $("#serviceTable").on("click", ".delete", function () {
     const index = $(this).data("index");
-
     Swal.fire({
       title: "¿Eliminar este servicio?",
       text: "Esta acción no se puede deshacer",
@@ -137,22 +260,16 @@
         services.splice(index, 1);
         saveToStorage();
         renderTable();
-
-        Swal.fire({
-          title: "Eliminado",
-          text: "El servicio ha sido eliminado correctamente.",
-          icon: "success",
-          timer: 1500,
-          showConfirmButton: false
-        });
+        Swal.fire("Eliminado", "El servicio ha sido eliminado correctamente.", "success");
       }
     });
   });
 
-  // Buscador personalizado
+  // Buscador
   $searchInput.on("input", function () {
     table.column(0).search(this.value).draw();
   });
 
-  renderTable();
+  // Cargar al inicio
+  loadServices();
 });

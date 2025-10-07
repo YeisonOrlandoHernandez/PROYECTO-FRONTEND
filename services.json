@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Servicios de infraestructura y soporte",
+    "desc": "Garantiza una base tecnológica sólida y eficiente con soporte técnico y mantenimiento.",
+    "availability": "Disponible",
+    "price": 100000
+  },
+  {
+    "name": "Servicios en la nube",
+    "desc": "Soluciones seguras y escalables para almacenar y acceder a la información desde cualquier lugar.",
+    "availability": "Disponible",
+    "price": 120000
+  },
+  {
+    "name": "Servicios de ciberseguridad",
+    "desc": "Protección avanzada contra amenazas digitales, vulnerabilidades y ciberataques.",
+    "availability": "Disponible",
+    "price": 140000
+  },
+  {
+    "name": "Desarrollo de software",
+    "desc": "Aplicaciones a la medida que optimizan procesos y mejoran la productividad.",
+    "availability": "Disponible",
+    "price": 100000
+  },
+  {
+    "name": "Servicios de datos e inteligencia",
+    "desc": "Transformamos los datos en información estratégica con BI e inteligencia artificial.",
+    "availability": "Disponible",
+    "price": 120000
+  },
+  {
+    "name": "Consultoría tecnológica",
+    "desc": "Asesoría experta para implementar soluciones tecnológicas adecuadas a cada negocio.",
+    "availability": "Disponible",
+    "price": 80000
+  },
+  {
+    "name": "Desarrollo web y móvil",
+    "desc": "Diseño y desarrollo de plataformas web y aplicaciones móviles modernas.",
+    "availability": "Disponible",
+    "price": 150000
+  },
+  {
+    "name": "Soporte técnico remoto",
+    "desc": "Atención rápida y eficiente para resolver incidentes técnicos sin desplazamiento.",
+    "availability": "Disponible",
+    "price": 70000
+  },
+  {
+    "name": "Gestión de redes y servidores",
+    "desc": "Administración, monitoreo y optimización de infraestructura de red y servidores.",
+    "availability": "Disponible",
+    "price": 130000
+  },
+  {
+    "name": "Respaldo y recuperación de datos",
+    "desc": "Sistemas automáticos de copia de seguridad y restauración de información.",
+    "availability": "Disponible",
+    "price": 110000
+  },
+  {
+    "name": "Capacitación tecnológica",
+    "desc": "Cursos personalizados para mejorar las habilidades digitales del personal.",
+    "availability": "Disponible",
+    "price": 60000
+  },
+  {
+    "name": "Integración de sistemas",
+    "desc": "Conectamos diferentes plataformas y aplicaciones para optimizar procesos.",
+    "availability": "Disponible",
+    "price": 95000
+  },
+  {
+    "name": "Automatización de procesos",
+    "desc": "Implementación de flujos automáticos para reducir errores y mejorar eficiencia.",
+    "availability": "Disponible",
+    "price": 125000
+  },
+  {
+    "name": "Monitoreo de sistemas 24/7",
+    "desc": "Supervisión constante para garantizar el rendimiento y disponibilidad de los servicios.",
+    "availability": "Disponible",
+    "price": 115000
+  },
+  {
+    "name": "Análisis de vulnerabilidades",
+    "desc": "Identificación de riesgos de seguridad antes de que se conviertan en amenazas.",
+    "availability": "Disponible",
+    "price": 135000
+  },
+  {
+    "name": "Consultoría en transformación digital",
+    "desc": "Ayudamos a las empresas a digitalizar y modernizar sus operaciones.",
+    "availability": "Disponible",
+    "price": 150000
+  },
+  {
+    "name": "Servicios de inteligencia artificial",
+    "desc": "Desarrollo de soluciones basadas en IA para optimizar decisiones empresariales.",
+    "availability": "Disponible",
+    "price": 180000
+  },
+  {
+    "name": "Análisis de datos empresariales",
+    "desc": "Informes avanzados y visualizaciones interactivas para toma de decisiones.",
+    "availability": "Disponible",
+    "price": 120000
+  },
+  {
+    "name": "Gestión de proyectos tecnológicos",
+    "desc": "Planificación, ejecución y control de proyectos de TI.",
+    "availability": "Disponible",
+    "price": 110000
+  },
+  {
+    "name": "Auditoría informática",
+    "desc": "Evaluación integral de la infraestructura tecnológica y cumplimiento de estándares.",
+    "availability": "Disponible",
+    "price": 95000
+  }
+]

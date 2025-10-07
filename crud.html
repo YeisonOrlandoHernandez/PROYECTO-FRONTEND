@@ -6,7 +6,7 @@
   <title>Menú Administrativo</title>
   <link rel="stylesheet" href="css/crud.css">
 
-  <!-- LIBRRERIAS USADAS -->
+  <!-- LIBRERÍAS USADAS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
@@ -17,8 +17,8 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <div class="icon">
-        <a href="Index.html">
-          <img src="img/logoc.png" class="icon" />
+        <a href="index.html">
+          <img src="img/logoc.png" class="icon" alt="Logo"/>
         </a>
       </div>
       <div class="profile">
@@ -62,19 +62,19 @@
       <form id="serviceForm">
         <input type="hidden" id="editIndex">
         
-        <label>Servicio</label>
+        <label for="serviceName">Servicio</label>
         <input type="text" id="serviceName" required>
         
-        <label>Descripción</label>
+        <label for="serviceDesc">Descripción</label>
         <input type="text" id="serviceDesc" required>
         
-        <label>Disponibilidad</label>
+        <label for="serviceAvailability">Disponibilidad</label>
         <select id="serviceAvailability">
           <option value="Disponible">Disponible</option>
           <option value="No disponible">No disponible</option>
         </select>
         
-        <label>Precio</label>
+        <label for="servicePrice">Precio</label>
         <input type="number" id="servicePrice" required>
         
         <div class="form-actions">
@@ -85,6 +85,7 @@
     </div>
   </div>
   
+  <!-- Script principal -->
   <script src="js/crud.js"></script>
 </body>
 </html>
