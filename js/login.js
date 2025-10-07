@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text: `Hola ${usuario}, acceso concedido ✅`,
         confirmButtonText: "Continuar"
       }).then(() => {
-        window.location.href = "./Index.html";
+        window.location.href = "./crud.html";
       });
     } else {
       Swal.fire({
